@@ -1,1 +1,55 @@
-<iframe src="https://feed.mikle.com/widget/v2/159010/?preloader-text=Loading" height="270px" width="1100px" class="fw-iframe" scrolling="no" frameborder="0"></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		a {
+			all: unset!important;
+		}
+		.feed-title{
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			margin-top: -6ch;
+		}
+		.feed-item-title{
+			
+			font-size: 24px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			color: black !important;
+			margin-bottom: -2ch;
+			position: relative;
+			text-decoration: none!important;
+		}
+		.feed-item-desc{
+			font-size: 22px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			position: relative;
+			height: 60px;
+		}
+		
+	</style>
+</head>
+<body>
+	<script src="//rss.bloople.net/?url=https%3A%2F%2Fwww.nrk.no%2Ftoppsaker.rss&detail=30&limit=10&showtitle=false&type=js"></script>
+	<script>
+			function scrollWin() {window.scrollBy(0, 120);}
+			setInterval(scrollWin, 10000)
+	</script>
+	<script>
+document.addEventListener('DOMContentLoaded', function(e) {
+    document.addEventListener('scroll', function(e) {
+        let documentHeight = document.body.scrollHeight;
+        let currentScroll = window.scrollY + window.innerHeight;
+        // When the user is [modifier]px from the bottom, fire the event.
+        let modifier = 100; 
+        if(currentScroll + modifier > documentHeight) {
+			document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+        }
+    })
+})
+	</script>
+</body>
+</html>
